@@ -60,7 +60,9 @@ class Example(QMainWindow, Ui_MainWindow):
 
     def draw_figure(self, qp):
         if self.flag > 1:
-            color = QColor(choice(range(256)), choice(range(256)), choice(range(256)))
+            clr = [choice(range(256)), choice(range(256)), choice(range(256))]
+            color = QColor(*clr)
+            print(clr)
             qp.setBrush(color)
             size = choice(range(50, 250))
             qp.drawEllipse(choice(range(0, 550)), choice(range(100, 350)), size, size)
